@@ -5,12 +5,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List productList = getProductList();
-        String joinedProductList = String.join(",\n", productList);
+//        String joinedProductList = String.join(",\n", productList);
         String myJoinedProductList = myJoinStringList(productList);
-        System.out.println(joinedProductList.equals(myJoinedProductList));
+        System.out.println(myJoinedProductList);
     }
 
-    static private String myJoinStringList(List stringList) {
+    static String myJoinStringList(List stringList) {
         String result = stringList.get(0).toString();
         for(int i = 1; i < stringList.size(); i++) {
             result += ",\n" + stringList.get(i).toString();
@@ -18,7 +18,7 @@ public class Main {
         return result;
     }
 
-    static private <String> List getProductList() {
+    static <String> List getProductList() {
         return List.of(
                 "Safco Value Mate Series Steel Bookcases, Baked Enamel Finish on Steel, Gray",
                 "Newell 342",
