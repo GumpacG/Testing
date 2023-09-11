@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id "me.champeau.jmh" version "0.7.1"
 }
 
 group 'org.example'
@@ -37,5 +38,11 @@ jacocoTestCoverageVerification {
             }
         }
     }
+}
+
+jmh {
+    warmupIterations = 2
+    iterations = 5
+    fork = 1
 }
 
